@@ -14,3 +14,13 @@ SELECT @TIME:=@TIME+1 AS HOUR,
 FROM ANIMAL_OUTS
 WHERE @TIME<23
 ORDER BY @TIME;
+
+-- 입양을 간 동물 중, 보호 기간이 가장 길었던 동물 두 마리의 아이디와 이름을 조회하는 SQL문을 작성해주세요. (상위2개 뽑기)
+-- 이때 결과는 보호 기간이 긴 순으로 조회해야 합니다.
+-- 상위 2개 봅기 ->LIMIT
+
+SELECT INS.ANIMAL_ID, INS.NAME
+FROM ANIMAL_INS INS, ANIMAL_OUTS OUTS
+WHERE INS.ANIMAL_ID = OUTS.ANIMAL_ID
+ORDER BY OUTS.DATETIME-INS.DATETIME DESC
+LIMIT 2;
