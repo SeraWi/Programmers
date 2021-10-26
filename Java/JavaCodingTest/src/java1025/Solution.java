@@ -20,6 +20,7 @@ class Solution {
 //		};
 
 		// 2차원 배열의 길이 구하기 (1차원 배열이 몇개인지)
+		// 갯수만큼 저장 공간 배열 만들기
 		int[] answer = new int[commands.length];
 		// arr배열 == commands안의 1차원 배열 하나
 		int[] arr = new int[3];
@@ -31,12 +32,12 @@ class Solution {
 			// j=0,1,2
 			for(int j=0; j<3; j++){
 				// [0][0],[0][1],[0][2]
-				// [1][0],[1],[1],[1][2]
-				arr[j] = commands[i][j];
+				// [1][0],[1],[1],[1][2]...
+				arr[j] = commands[i][j]; // arr[0]= 2, arr[1]= 5, arr[2] =3 
 			}
 			// arr에는 commands 1차열 배열 하나가 저장된다
-			// [2,5,3] i=0 일때
-			// [4,4,1] i=1 일때
+			// arr= [2,5,3] i=0 일때
+			// arr= [4,4,1] i=1 일때
 
 			//  j=2 ->2번째 숫자, index = 1 , 첫번째 숫자 부터 마지막 숫자까지 arrayList에 저장하기
 			for(int j=arr[0]-1; j<arr[1]; j++){
