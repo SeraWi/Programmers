@@ -56,7 +56,7 @@ public class IteratorEx {
 		map.put("three", "셋");
 		map.put("four", "넷");
 		
-		//keySet ->iterator사용하기
+		//1. keySet ->iterator사용하기
 		Set<String> keys = map.keySet();
 		Iterator<String> itr2 = keys.iterator();
 		while(itr2.hasNext()) {
@@ -64,7 +64,7 @@ public class IteratorEx {
 			System.out.println(key);
 		}
 		
-		//iterator사용하지 않고 더 간단히 ->for each
+		//2. iterator사용하지 않고 더 간단히 ->for each
 		for(String key: map.keySet()) {
 			System.out.println(key);
 		}
