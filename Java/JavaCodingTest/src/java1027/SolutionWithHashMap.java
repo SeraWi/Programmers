@@ -36,7 +36,7 @@ class SolutionWithHashMap{
         // completion에 있는 한명한명 해쉬맵에 저장
         // 동일 key값으로 추가시 덮어쓰기가 된다 ***
         // player 이름으로 value값 찾아서 -1시키기 -> 동명이인 없는 경우 0으로 바뀜 , 0으로 바꼇다는 건 completion에 존재한다는 의미
-        // 동명이인이 있는 경우 1으로 바뀜
+        // 동명이인이 있는 경우 1으로 바뀜 -> 또 같은 이름이 있다면  ->0으로 바뀜 
         
         for (String player : completion) {
         	hm.put(player, hm.get(player) - 1);
