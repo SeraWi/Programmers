@@ -40,7 +40,7 @@ public class IteratorEx {
 		}
 		
 		System.out.println("3");
-		//3. Iterator
+		//3. Iterator 
 		Iterator<String> itr = list.iterator();
 		
 		while(itr.hasNext()) {
