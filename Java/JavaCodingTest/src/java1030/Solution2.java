@@ -2,17 +2,19 @@ package java1030;
 
 public class Solution2 {
 	// 정답자 깔끔 풀이
-	// Java Greedy
+	// Java Greedy, 탐욕법
 	public int solution(int n, int[] lost, int[] reserve) {
-		// 사람 수 만큼 배열 만들기
+		// 전체 학생 수 만큼 배열 만들기
 		int[] people = new int[n];// 현재{0,0,0,0....}
 		
+		// 최종으로 수업 들을 수 있는 학생 수
 		int answer = n;
-		// 잃어버린 학생들 2,4 
+		
+		// 잃어버린 학생들 2,4 ->-1
 		for (int l : lost) 
 			people[l-1]--; // people[1] = -1 , people[3] =-1
 		
-		// 여분있는 학생 1,3 5
+		// 여분있는 학생 1,3 5 -> 1
 		for (int r : reserve) 
 			people[r-1]++; // +1 people[0] = 1, people[2]= 1, people[4] =1 
 
@@ -23,7 +25,7 @@ public class Solution2 {
 				
 				if(i-1>=0 && people[i-1] == 1) {
 					// 해당 index 보다 1 작은 index가 1인 경우 : 여분의 체육복 있기 때문에 빌릴 수 있음
-					//i가 인경우는 index작은 사람한테 빌릴 수 없음
+					//i가 o인경우는 index작은 사람한테 빌릴 수 없음
 					
 					// 빌리는 사람 ->-1에서 0으로 만들기
 					people[i]++;
@@ -38,7 +40,7 @@ public class Solution2 {
 					// 빌려주는 사람 -> 0으로만들기
 					people[i+1]--;
 				}else 
-					//여기저기 속하지 않는 경우 도난당했지만 빌릴 수없음
+					//여기저기 속하지 않는 경우 도난당했고 빌릴 수 도 없음
 					
 					//최종 참여 인원 -1
 					answer--;
