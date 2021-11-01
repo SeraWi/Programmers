@@ -18,7 +18,6 @@ public class MySolution {
 		int answer = 0;
 		
 		//nums에서 중복제거해서 arrayList에 담기
-
 		ArrayList<Integer> arrayList = new ArrayList<>();		
 
 		for(Integer item : nums) {
