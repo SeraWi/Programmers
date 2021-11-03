@@ -50,6 +50,7 @@ public class OtherSolution {
 
     //해당 위치와 번호 위치의 거리
     private int getDist(int[] pos, int num) {
+    	//{3,0}에서 {1,1}까지 거리 (10에서 5의 거리)
         return Math.abs(pos[0]-numpadPos[num][0]) + Math.abs(pos[1]-numpadPos[num][1]);
     }
 }
