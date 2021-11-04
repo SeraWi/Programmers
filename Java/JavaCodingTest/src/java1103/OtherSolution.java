@@ -17,14 +17,16 @@ public class OtherSolution {
     //초기 위치
     int[] leftPos = {3,0}; // leftpost[0] = 3, leftpos[1]= 0
     int[] rightPos = {3,2};
+    // 오른손잡이?왼손잡이?
     String hand;
     
     public String solution(int[] numbers, String hand) {
+    	//오른손잡이인지 왼손잡이인지 확인
         this.hand = (hand.equals("right")) ? "R" : "L";
 
         String answer = "";
         for (int num : numbers) {
-        	// 어디로 누르는지!
+        	// 어디 손으로 누르는지 확인
             String Umji = pushNumber(num);
             answer += Umji;
             
@@ -37,6 +39,8 @@ public class OtherSolution {
 
     //num버튼을 누를 때 어디 손을 사용하는가
     private String pushNumber(int num) {
+    	// 1,4,7 -> 무조건 왼손
+    	// 3,6,9 -> 무조건 오른손
         if(num==1 || num==4 || num==7) return "L";
         if(num==3 || num==6 || num==9) return "R";
 
@@ -44,7 +48,7 @@ public class OtherSolution {
         if(getDist(leftPos, num) > getDist(rightPos, num)) return "R";
         if(getDist(leftPos, num) < getDist(rightPos, num)) return "L";
 
-        //같으면 손잡이
+        //같으면 나의 원래 손잡이
         return this.hand;
     }
 
