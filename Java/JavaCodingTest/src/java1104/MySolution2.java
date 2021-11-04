@@ -9,7 +9,7 @@ public class MySolution2 {
 
 	public static int solution(int[] d, int budget) {
 		// d: 부서별로 신청한 금액
-		// budger : 예산
+		// budget : 예산
 		
 		// 부서별 신청한 금액을 정렬하기
 		Arrays.sort(d); //[1,3,2,5,4] -->1,2,3,4,5
