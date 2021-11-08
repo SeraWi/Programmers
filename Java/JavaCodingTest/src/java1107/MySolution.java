@@ -12,56 +12,53 @@ public class MySolution {
 	//소수가 되는 경우의 개수를 return 하도록 solution 함수를 완성해주세요.
 	// 제출시 시간초과
 	public static int solution(int[] nums) {
-		
+
 		// 약수 카운트
 		int cnt = 0;
-		
+
 		// 답
 		int answer =0;
-		
+
 		// 오름차순 정렬시키기
 		Arrays.sort(nums);
 		ArrayList<Integer> sum = new ArrayList<>();
-		
+
 		// nums 배열에 요소 3개씩 더하기 ->소수인지 확인 -> cnt증가
 		// 3개 더한값을 다시 배열에 넣기?
 		for(int i=0; i<nums.length-2; i++) {
 			for(int j=1 ; j<nums.length-1; j++) {
 				for(int k= 2; k<nums.length ;k++) {
 					//System.out.println(nums[i]+nums[j]+nums[k]);
-						if(!sum.contains(nums[i]+nums[j]+nums[k])) {
-							sum.add(nums[i]+nums[j]+nums[k]);
-						}
-					
+					// arraylist에 담기	
+					if(!sum.contains(nums[i]+nums[j]+nums[k])) {
+						sum.add(nums[i]+nums[j]+nums[k]);
+					}
 				}
 			}
 		}
 		System.out.println(sum);
-
-		// [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
-		//System.out.println("Hello Java");
 		for(int i =0; i<sum.size(); i++) {
-			for(int j= 2; j< sum.get(i)+1; j++) {
-				
+			for(int j= 1; j< sum.get(i)+1; j++) {
 				if(sum.get(i)%j ==0) {
 					cnt+=1;
 				}
 			}
 			// 약수면 ++1
 			if(cnt ==2) {
+				//System.out.println(sum.get(i));
 				answer+=1;
 			}
 			// cnt다시 초기화시켜주기
 			cnt =0;
 		}
-		
-		
+
+
 		return answer;
 	}
-	
+
 	public static void main(String[] args) {
-		//int[] nums = {1,2,7,6,4};
-		int[] nums = {1,2,3,4};
+		int[] nums = {1,2,7,6,4};
+		//int[] nums = {1,2,3,4};
 		System.out.println(solution(nums));
 	}
 }
