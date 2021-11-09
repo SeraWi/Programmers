@@ -32,10 +32,6 @@ public class MySolution {
 		stageCntarr.add(0);
 
 		
-		
-		// 실패율을 담는 arrayList
-		//ArrayList<Double> failrate = new ArrayList<>();	
-		
 		// 실패율 HashMap 으로 만들기 (단계, 실패율)으로 저장
 		Map<Integer,Double> hashmap = new HashMap<>();
 
@@ -46,29 +42,27 @@ public class MySolution {
 
 			for(int participate : stages) {
 				if(participate == i) {
+					// 현재 단계 == stages 인자 숫자
 					stageCnt ++;
 				}
 			}
+			
 			//한단계 끝나면 stageCnt 저장
 			stageCntarr.add(stageCnt);
 
-			//실패율 계산
-			//이 단계에서 실패한사람 / 전체 첨가자수 - 전단계 탈락자 수 *100
-			//System.out.println(stageCntarr.get(i-1));
-			//System.out.println( i+"단계"+stageCnt);
+			
 			// total : 전단계까지의 탈락자 수 총합산
 			int total = 0;
 			for(int k = 0; k<i; k++) {
 				total += stageCntarr.get(k);
 			}
-			//System.out.println(total +"이전 단계 까지탈락자");
-			//System.out.println(stageCnt +"나누기" +(stages.length-total));
-			//failrate.add((stageCnt/ (double) (stages.length-total)));
 			if(stages.length-total==0){
 				// 참가자 전체 1단계에서 탈락하면 
 				// 나누기 0으로 할 경우 -> 실패율 0으로 만들기
 				hashmap.put(i,0.0);
 			}else {
+				//실패율 계산
+				//이 단계에서 실패한사람 / 전체 첨가자수 - 전단계까지 탈락자수
 				hashmap.put(i,(stageCnt/ (double) (stages.length-total)));
 			}
 			
@@ -78,8 +72,8 @@ public class MySolution {
 		}
 		
 		// value값 기준으로 내림차순
-		
 		//System.out.println(hashmap);
+		
 		// Map.Entry 리스트
 		List<Entry<Integer,Double>> entryList = new ArrayList<Entry<Integer,Double>>(hashmap.entrySet());
 		
@@ -91,11 +85,7 @@ public class MySolution {
 			}
 		});
 		
-		// 출력
-//		for(Entry<Integer,Double> entry: entryList ) {
-//			System.out.println(entry.getKey() +":"+ entry.getValue());
-//		}
-		System.out.println(entryList);
+		//System.out.println(entryList);
 		
 		// answer에 key값만 저장
 		ArrayList <Integer> answer = new ArrayList<>();
