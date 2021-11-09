@@ -1,4 +1,4 @@
-package java1103;
+package Kakao2020Intership;
 
 public class OtherSolution {
 	  //        0부터 9까지 좌표 {y,x}

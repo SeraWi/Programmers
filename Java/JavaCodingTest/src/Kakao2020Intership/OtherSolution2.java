@@ -1,4 +1,4 @@
-package java1103;
+package Kakao2020Intership;
 
 public class OtherSolution2 {
 	// 특수문자를 10과 12로 생각
