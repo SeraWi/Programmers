@@ -93,7 +93,6 @@ public class MySolution {
 		for(Entry<Integer, Double> entry: entryList) {
 			answer.add(entry.getKey());
 		}
-		
 				
 		return answer;
 	}
