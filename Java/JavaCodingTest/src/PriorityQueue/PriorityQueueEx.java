@@ -73,7 +73,7 @@ public class PriorityQueueEx {
 		System.out.println(pq2);//[25, 21, 18, 1, 15, 10, 8]
 		
 		pq2.poll();
-		System.out.println(pq2);
+		System.out.println(pq2); //[21, 15, 18, 1, 8, 10]
 
 		
 	}
