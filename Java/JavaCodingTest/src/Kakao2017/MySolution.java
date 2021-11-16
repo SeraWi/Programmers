@@ -15,10 +15,9 @@ import java.util.LinkedList;
 public class MySolution {
 	static String[]members = {"A","C","F","J","M","N","R","T"};
 	static ArrayList<String> membersPerm;
-
+	static int cnt =0;
 
 	public static int solution(int n, String[] data) {
-		
 		// n : 조건의 갯수
 		// data : 조건
 		// 배열을 arrayList 로 바꾸기
@@ -60,48 +59,47 @@ public class MySolution {
 //				System.out.println(realDis);
 //				System.out.println(compare);
 				
-				switch(compare) {
-				case ">" : 
-					if(realDis > distance ) {
-						break;
-					} else {
-						answer -=1;
-						break;
-					}
-					
-				case "=":
-					if(realDis == distance) {
-						break;
-					}else {
-						answer -=1;
-						break;
-					}
-					
-				case "<":
-					if(realDis < distance) {
-						break;
-					}else {
-						answer -=1;
-						break;
-					}
-					
-				}
-//				if(compare.equals(">") && realDis> distance) {
-//					//System.out.println(realDis +">"+ distance);
+//				switch(compare) {
+//				case ">" : 
+//					if(realDis > distance ) {
+//						break;
+//					} else {
+//						answer -=1;
+//					}
 //					
-//				
-//				}else if(compare.equals("=") && realDis == distance) {
-//					//System.out.println(realDis +"=="+ distance);
-//					break;
-//				}else if(compare.equals("<") && realDis < distance){
-//					//System.out.println(realDis +"<"+ distance);
-//					break;
-//				} else {
-//					// 단 한 번이라도 조건을 만족하지 못함 -> 전체 갯수에서 빼기!, for문 종료
-//					//System.out.println("break");
+//				case "=":
+//					if(realDis == distance) {
+//						break;
+//					}else {
+//						cnt++;
+//						break;
+//					}
 //					
+//				case "<":
+//					if(realDis < distance) {
+//						break;
+//					}else {
+//						cnt++;
+//						break;
+//					}
 //					
 //				}
+				if(compare.equals(">") && realDis> distance) {
+					//System.out.println(realDis +">"+ distance);
+					
+				
+				}else if(compare.equals("=") && realDis == distance) {
+					//System.out.println(realDis +"=="+ distance);
+					break;
+				}else if(compare.equals("<") && realDis < distance){
+					//System.out.println(realDis +"<"+ distance);
+					break;
+				} else {
+					// 단 한 번이라도 조건을 만족하지 못함 -> 전체 갯수에서 빼기!, for문 종료
+					//System.out.println("break");
+					return false;
+					
+				}
 				
 			}// for 문 종료
 			
