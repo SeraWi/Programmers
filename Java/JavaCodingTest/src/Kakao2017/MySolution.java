@@ -15,7 +15,6 @@ import java.util.LinkedList;
 public class MySolution {
 	static String[]members = {"A","C","F","J","M","N","R","T"};
 	static ArrayList<String> membersPerm;
-	static int cnt =0;
 
 	public static int solution(int n, String[] data) {
 		// n : 조건의 갯수
@@ -39,72 +38,42 @@ public class MySolution {
 		//			System.out.println(arr);
 		//		}
 		int answer = 40320;
+		int cnt =0;
 		
 		for(int i = 0; i<membersPerm.size(); i++) {
-
+			
+			// 조건 비교하기
 			for(int j =0;  j<n; j++) {
 				String My = data[j].substring(0,1);
 				String You = data[j].substring(2,3);	
 				String compare = data[j].substring(3,4);
 				int distance = Integer.parseInt(data[j].substring(4,5));
-				//System.out.println(distance);
-//				System.out.println(My);
-//				System.out.println(You);
-//				System.out.println(compare);
-//				System.out.println(distance);
 				
 				// membersPerm 에서 문자 추출해서 거리의 절댓값 구하기
 				int realDis = Math.abs(membersPerm.get(i).indexOf(My) - membersPerm.get(i).indexOf(You));
-//				System.out.println(distance);
-//				System.out.println(realDis);
-//				System.out.println(compare);
+				//System.out.println(compare.equals("="));
+				//System.out.println(realDis +","+ distance);
+				// 조건에 해당하지 않으면  -1시키고 ->break
+				boolean chk = compare.equals(">") && realDis > distance;
+				boolean chk2 = compare.equals("<") && realDis < distance;
+				boolean chk3 =compare.equals("=") && realDis == distance;
 				
-//				switch(compare) {
-//				case ">" : 
-//					if(realDis > distance ) {
-//						break;
-//					} else {
-//						answer -=1;
-//					}
-//					
-//				case "=":
-//					if(realDis == distance) {
-//						break;
-//					}else {
-//						cnt++;
-//						break;
-//					}
-//					
-//				case "<":
-//					if(realDis < distance) {
-//						break;
-//					}else {
-//						cnt++;
-//						break;
-//					}
-//					
-//				}
-				if(compare.equals(">") && realDis> distance) {
-					//System.out.println(realDis +">"+ distance);
+				System.out.println(chk);
+				if(chk || chk2 || chk3) {
+					// pass 조건 만족
 					
-				
-				}else if(compare.equals("=") && realDis == distance) {
-					//System.out.println(realDis +"=="+ distance);
-					break;
-				}else if(compare.equals("<") && realDis < distance){
-					//System.out.println(realDis +"<"+ distance);
-					break;
-				} else {
-					// 단 한 번이라도 조건을 만족하지 못함 -> 전체 갯수에서 빼기!, for문 종료
-					//System.out.println("break");
-					return false;
-					
+				}else {
+					// 조건 불만족
+					cnt = cnt- j;
+					continue;
 				}
+				cnt ++;
 				
-			}// for 문 종료
+				
+			} // 안쪽 for
 			
-		}
-
+		}// 바깥 쪽 for
+		System.out.println(cnt);
 		return answer;
 	}
 
