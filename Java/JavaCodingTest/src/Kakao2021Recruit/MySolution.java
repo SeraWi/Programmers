@@ -63,9 +63,9 @@ public class MySolution {
 	} // solution 함수 끝
 
 	public static void main(String[] args) {
-		//String id = "...!@BaT#*..y.abcdefghijklm";
+		 String id = "...!@BaT#*..y.abcdefghijklm";
 		//String id="z-+.^.";
-		String id="=.=";
+		//String id="=.=";
 		System.out.println(solution(id));
 	}
 
