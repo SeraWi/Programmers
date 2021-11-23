@@ -2,9 +2,9 @@ package Kakao2018Recruit;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-// 2018 카카오 blind recruitment
+// 2018 카카오 blind recruitment 비밀지도
 // 통과 1시간 20분
-public class MySolution {
+public class SecretMap {
 	public static ArrayList<String> solution(int n, int[] arr1, int[] arr2) {
 		ArrayList<String>answer = new ArrayList<>();
 		// 들어오는 배열을 일단 이진수로 바꾸고 -> map으로 저장하기
