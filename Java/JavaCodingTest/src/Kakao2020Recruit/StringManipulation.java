@@ -14,6 +14,7 @@ public class StringManipulation {
 			String answer ="";
 			
 			for(int j= 0; j< s.length(); j=j+i) {
+				// Index Out of Bounds EXception 해결해야
 					String before = s.substring(j, j+i); // 0,2
 					String after = s.substring(j+i, j+i+i); // 2, 4
 				if( !before.equals(after)) {
