@@ -59,6 +59,7 @@ public class IteratorEx {
 		//1. keySet ->iterator사용하기
 		Set<String> keys = map.keySet();
 		Iterator<String> itr2 = keys.iterator();
+		// Iterator<String> itr2 = map.keySet().iterator()
 		while(itr2.hasNext()) {
 			String key = itr2.next();
 			System.out.println(key);
