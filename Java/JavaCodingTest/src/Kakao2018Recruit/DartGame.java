@@ -15,8 +15,8 @@ public class DartGame {
 	static int[] sum = new int[3];
 
 	static int solution(String msg){
-        String reg = "([0-9]{1,2}[S|T|D][*|#]{0,1})";
-        Pattern p = Pattern.compile(reg+reg+reg);
+        String reg = "([0-9]{1,2}[S|T|D][*|#]{0,1})"; // 정규식 사용
+        Pattern p = Pattern.compile(reg+reg+reg); // 3묶음으로
         Matcher m = p.matcher(msg);
         m.find();
         for(int i=1; i<=m.groupCount(); i++){
