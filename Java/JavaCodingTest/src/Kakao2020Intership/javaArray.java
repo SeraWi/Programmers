@@ -15,7 +15,7 @@ public class javaArray {
 	};
 	
 	public static void main(String[] args) {
-		int [] arr = numpadPos[7]; //2차원 배열에서 1차열 배열 뽑기
+		int [] arr = numpadPos[7]; //2차원 배열에서 1차열 배열 뽑기 ={2,0}
 		System.out.println(arr[0]);
 		System.out.println(arr[1]);
 	}
