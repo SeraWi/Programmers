@@ -7,7 +7,7 @@ public class AddAllNumbers {
 	// absolutes : 절댃값을 담은 정수 배열
 	// signs : 불리언 배열을 담음, 양수이면 true, 음수이면 false
 	// 원래 숫자를 다 더해서 return 하기
-
+	//풀이1)
 	public static int solution(int[] absolutes, boolean[] signs) {
 		int answer = 0;
 
@@ -31,7 +31,7 @@ public class AddAllNumbers {
 		return answer;
 	}
 	
-	
+	// 풀이2) 
 	public int solution2(int[] absolutes, boolean[] signs) {
 		int answer =0;
 		for( int i=0; i<signs.length ; i++) {
@@ -41,6 +41,7 @@ public class AddAllNumbers {
 		
 		return answer;
 	}
+	
 	public static void main(String[] args) {
 		int[] absolutes = {4,7,12};
 		boolean[] signs = {true,false,true};
