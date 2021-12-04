@@ -12,6 +12,7 @@ public class RotateTable {
 	// 행 X 열  
 	public static  int[] solution(int rows, int columns, int[][] queries) {
 		int[] answer = new int[queries.length];
+		
 		//원본테이블 생성
 		matrix = new int[rows][columns];
 
@@ -23,7 +24,8 @@ public class RotateTable {
 			}
 		}
 
-
+		
+		//queries의 원소 하나 씩 돌려가면서 최솟값 넣기
 		for( int i =0; i<queries.length ; i++) {
 			answer[i] = rotate(queries[i]);
 			show(rows);
@@ -66,6 +68,8 @@ public class RotateTable {
 			matrix[r1][i] = matrix[r1][i-1];
 			if(min > matrix[r1][i]) min = matrix[r1][i];
 		}
+		
+		//(1,2)에 (1,1)값을 저장하기
 		matrix[r1][c1+1] = temp;
 
 		return min;
