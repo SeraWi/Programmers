@@ -1,5 +1,6 @@
 package DevMatching2021_2;
 
+// 84/100 점 테스트 케이스 3개 실패
 public class Question1 {
 	static String [][]table ;
 	public static int solution(String[] drum) {
@@ -49,9 +50,12 @@ public class Question1 {
 		int starCnt =0;
 
 		while(xx<table.length && starCnt !=2) {
+			// 현재 위치 확인!
 			String position = table[xx][yy];
 			
 			System.out.println(position);
+			
+			
 			if(position.equals("#")) {
 				//아래쪽으로 내려오기
 				xx +=1;
@@ -64,13 +68,14 @@ public class Question1 {
 				yy-=1;
 				
 			}else if(position.equals("*")){
+				// 별 두번 마나기 전까지
 				if(starCnt <2) {
 					xx+=1;
 					//아래로 내려가기
 					starCnt++;
 					
 				}else {
-					// 별 두번만나면  멈추기
+					// 별 두번만나면  멈추기 ->while문 탈출
 					break;
 				}
 			}
