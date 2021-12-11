@@ -2,6 +2,8 @@ package Kakao2019Intern;
 
 import java.util.Stack;
 
+
+// 정답 통과
 public class DollGame {
 	//인형 쌓아 올리기
 	static Stack<Integer>dollStack = new Stack<>();
