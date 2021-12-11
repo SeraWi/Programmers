@@ -3,7 +3,7 @@ package Lv2;
 import java.util.HashMap;
 
 
-// 해시/ 위장 문제
+// 해시/ 위장 문제 (정답통과)
 // 스파이가 가진 의상들이 담긴 2차원 배열 clothes가 주어질 때 
 // 서로 다른 옷의 조합의 수를 return 하도록 solution 함수를 작성해주세요.
 public class SpyDisguise {
