@@ -1,4 +1,4 @@
-package Kakao2020Intership;
+package Kakao2020Intern;
 
 import java.awt.print.Printable;
 

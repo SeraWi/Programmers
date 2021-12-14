@@ -1,4 +1,4 @@
-package Kakao2020Intership;
+package Kakao2020Intern;
 
 public class javaArray {
 	static int[][] numpadPos = {
