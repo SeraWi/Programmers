@@ -29,6 +29,7 @@ public class NewCourse {
     		for( int j=0;j<orders.length; j++) {
     			find(0,"",course[i],0, orders[j]);
     		}
+    		
     		for(String s: map.keySet()) {
     			if(map.get(s) == m && m >1) {
     				pq.offer(s);
