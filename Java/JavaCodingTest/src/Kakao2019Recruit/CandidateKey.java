@@ -26,6 +26,7 @@ public class CandidateKey {
 		List<Integer> list =new ArrayList<Integer>();
 		// 세로 길이 만큼 비트연산으로 밀기 1000000
 		for(int i=1; i<(1<<m); i++) {
+			//set :중복 허용 불가
 			Set<String> s= new HashSet<String>();
 			
 			for(int j=0;j<n; j++) {
