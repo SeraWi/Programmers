@@ -21,7 +21,7 @@ public class BitOp {
 		return (num &(1<<i)) !=0;
 	}
 	
-	//해당 인덱스를 1로 세팅한 값을 반환
+	// 해당 인덱스를 1로 세팅한 값을 반환
 	// or연산으로 기존에 1이면 1로, 0이면 1로 바꾼다
 	// 0101 | 1000 -> 1101반환
 	static int setBit(int num , int i) {
