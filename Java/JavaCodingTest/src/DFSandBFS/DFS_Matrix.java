@@ -25,13 +25,15 @@ public class DFS_Matrix {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		System.out.println("node갯수를 입력하세요");
 		vertex = sc.nextInt();
-		System.out.println(vertex);
+		System.out.println("edge갯수를 입력하세요");
 		edge = sc.nextInt();
 		map = new int[vertex+1][vertex+1];
 		visit = new boolean[vertex+1];
 
 		for( int i =0; i<edge; i++) {
+			System.out.println(i+"번쨰 엣지의 관계를 쓰세요");
 			int start = sc.nextInt();
 			int next = sc.nextInt();
 
