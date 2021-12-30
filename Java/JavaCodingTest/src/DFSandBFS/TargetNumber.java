@@ -1,6 +1,6 @@
 package DFSandBFS;
 
-public class TargetNumber_Lv2 {
+public class TargetNumber{
 	
 	// DFS의 재귀함수 사용 풀이
 	// 사용할 수 있는 숫자가 담긴 배열 numbers
