@@ -4,20 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-// 정확성 테스트 모두 통과, 효율성 테스트 시간초과
+/* 정확성 테스트 모두 통과, 
+ 효율성 테스트 시간초과*/
 public class QuerySearch {
-	//각 문의조건에 해당하는 사람들의 숫자를 순서대로 배열에 담아 return
-	// info: java backend junior pizza 150 , python frontend senior chicken 150
-	// query : 검색할 키워드 java and backend and junior and pizza 100
-	// python and frontend and - and chicken 200
+	/*
+	 * 각 문의조건에 해당하는 사람들의 숫자를 순서대로 배열에 담아 return info: 
+	 * java backend junior pizza 150, python frontend senior chicken 150 
+	 * query : 검색할 키워드 java and backend and junior and pizza 100 python and frontend and - and chicken 200
+	 */
 	
-	// class 정의해서, 사용자 정보를 객체로 저장, index 같이 저장
-	// query 검색할 때, query 검색용 arraylist만들기 -> 계속 for문 돌려가면서 검사?
+
 	//사용자 정보 담은 list
     static List<Candi> candiInfo = new ArrayList<>();
-
-    
-	
 	
     public static List<Integer> solution(String[] info, String[] query) {
         List<Integer> answer = new ArrayList<>();
@@ -34,11 +32,12 @@ public class QuerySearch {
         
         
         for(String querys : query) {
+        	// query 문 split시키기
         	String[] qsplit = querys.split(" ");
         	//java and backend and junior and pizza 100
         	// 0   1   2        3   4      5  6     7
         	// 0,2,4,6,7
-          	
+        	
         	int qreturn = queryCheck(candiInfo, qsplit[0],qsplit[2],qsplit[4],qsplit[6],Integer.parseInt(qsplit[7]));
         	answer.add(qreturn);
         	
@@ -58,18 +57,18 @@ public class QuerySearch {
     	// - 인지 확인
     	// 효율성 고려..
     	
-    	
     	for(int i =0; i<candiInfo.size(); i++) {
     		
-    		if(candiInfo.get(i).lang.equals(lang) || lang.equals("-")) {
-    			
+    		// 점수 미리 비교 
+    		if(candiInfo.get(i).score >= score) {
+    			// back or front or -
     			if(candiInfo.get(i).job.equals(job) || job.equals("-")) {
-    				
+    				// senior or junior or -
     				if(candiInfo.get(i).career.equals(career) || career.equals("-")) {
-    					
+    					// pizza or chicke or -
     					if(candiInfo.get(i).food.equals(food) || food.equals("-")) {
-    						
-    						if(candiInfo.get(i).score >= score) {
+    						// c++, java, python or -
+    						if(candiInfo.get(i).lang.equals(lang) || lang.equals("-")) {
     							sum += 1;
     						}
     					}
@@ -77,14 +76,7 @@ public class QuerySearch {
     				
     			}
     		}
-    		
-    		
-    		
     	}
-    	
-    	
-    	
-    	
     	return sum;
     }
     //query check 메서드
@@ -114,6 +106,7 @@ public class QuerySearch {
     
 }
 
+// 지원자 정보를 담는 class
 class Candi{
 	
 	String lang;
