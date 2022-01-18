@@ -3,14 +3,6 @@ package StackAndQueue;
 import java.util.Stack;
 
 
-
-
-/*두 개의 Stack 을 사용하여 한 개의 Queue 를 구현하시오.
-Queue 는 add, remove, peek,isEmpty API 를 제공해야 하며, 
-Stack 은 push, pop, peek, isEmpty API 를 이미 제공 하고 있다고 가정한다.*/
-
-
-
 public class Question2 {
 
 	public static void main(String[] args) {
@@ -22,16 +14,14 @@ public class Question2 {
 		q.add(5);
 		q.add(7);
 		q.add(9);
-		System.out.println(q.isEmpty());
-		
+		System.out.println(q.isEmpty());//false
 		
 		while(q.size() > 0) {
-			System.out.println(q.remove() +"");
+			System.out.println(q.peek());
+			System.out.println(q.remove() +""); // 1,2,3,5,7,9
 		}
 		
-		System.out.println(q.isEmpty());
-		
-		
+		System.out.println(q.isEmpty()); //true
 		
 	}
 }
@@ -44,23 +34,21 @@ class Queue{
 		stackIn = new Stack<>();
 		stackOut = new Stack<>();
 	}
-
-	//enqueue-> add
+	//StackIn에 데이터 저장
 	public void add(int num) {
 		stackIn.push(num);
 	}
-
-	//dequeue -> remove(첫번째 값 제거)
-	// peek (첫번째값 삭제하지 않고 반환)
+	
 	public int remove() {
-		// 스택2 비어있다면 스택1원소 넣기
+		// stackOut이 비어있는 경우 실행
 		if(stackOut.isEmpty()) {
+			// StackIn의 데이터가 빌때까지 StackOut으로 옮긴다.
 			while(!stackIn.isEmpty()) {
 				stackOut.push(stackIn.pop());
 			}
 		}
 
-		return stackOut.pop(); //삭제하고 꺼내기
+		return stackOut.pop(); 
 	}
 
 	public int peek() {
@@ -70,13 +58,14 @@ class Queue{
 			}
 		}
 
-		return stackOut.peek(); //값반환
+		return stackOut.peek(); 
 	}
 	
 	public int size() {
 		return stackIn.size()+ stackOut.size();
 	}
 	
+	// 두개의 스택 사이즈가 0이라면 데이터가 없는 상태
 	public boolean isEmpty() {
 		boolean chk = false;
 		if(stackIn.size()+ stackOut.size() == 0) {
