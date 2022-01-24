@@ -7,6 +7,7 @@ public class LRUCache2 {
 	public int solution(int cacheSize, String[]cities) {
 		int answer =0;
 		
+		// cacheSize에 맞는 캐시 만들기
 		LRU<String, String> clsTemp = LRU.newInstance(cacheSize);
 		
 		
@@ -38,6 +39,7 @@ class LRU<K,V> extends LinkedHashMap<K,V>{
 		this.size= size;
 	}
 	
+	// 가장 오랜된 거 삭제?
 	protected boolean removeEldestEntry(Map.Entry< K, V> eldest) {
 		return size() > size;
 	}
