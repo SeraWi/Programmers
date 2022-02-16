@@ -27,7 +27,7 @@ public class Report {
 
 		// 정지된 Id + 횟수를 담는 map (정지맵)
 		Map<String, Integer> reportMap = new Hashtable<>();
-		// 누가 누구를신고했는지 저장 (신고맵)
+		// 누가 누구를신고했는지 저장 (신고맵)id_list 순서대로 저장 위해 linedhashmap사용
 		Map<String, String> reMap = new LinkedHashMap<>();
 		
 		for(String id : id_list) {
