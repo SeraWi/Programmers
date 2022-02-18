@@ -6,11 +6,13 @@ import java.util.*;
 // 괄호의 갯수가 같은 경우->균형잡힌 괄호 문자열 (()))(
 // ()의 괄호짝도 모두 맞는 경우 -> 올바른 괄호 문자열 (())()
 
+
+
 public class Brackets {
 	int pos;
 	
-	// 올바른 문자열인지 확인하는 동시에 , 분리시점 pos에 저장
-	// 균형잡힌 문자열 되는순간 return
+	// 올바른 문자열인지 확인하는 동시에 , 분리시점 pos(최초의 균형 잡힌 상태)에 저장
+	// boolean : 올바른 문자열인지  
 	boolean isCorrect (String str) {
 		
 		boolean ret = true;
