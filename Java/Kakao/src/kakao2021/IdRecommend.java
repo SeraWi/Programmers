@@ -1,5 +1,17 @@
 package kakao2021;
 
+
+
+// 아이디 추천 문제
+/*StringBuilder 
+String 객체까리 더하는 방법은 메모리할당과 해제를 발생, 비효율적
+StringBuilder 는 변경 가능한 문자열을 만들어 준다.
+append() : 문자열 추가
+delete(index) : index 의 문자열 제거
+deleteCharAt() : 특정 인덱스의 한문자만 삭제
+reverse() :문자열 거꾸로 뒤집어줌
+toString() :String 으로 반환
+*/
 public class IdRecommend {
 	
 	// 유효한 문자의 경우
@@ -27,13 +39,15 @@ public class IdRecommend {
 				continue;
 			}
 			if(ch =='.') {
-				//처음 나온 마침표				마지막에 나온 마침표
+				//처음 나온 마침표				
 				if(answer.length() == 0 || lastDot) {
 					continue;
 				}
+				
+				// 중간에 있는 .은 true 를 반환하게 된다.
+				// 연속되는 .은 lastDot 이 true 라서 위의 if 문을 거쳐 skip된다.
 				lastDot = true;
 			}else {
-				//마지막 문자가 .이 아닌경우
 				lastDot = false;
 			}
 			//소문자로 변환
@@ -42,11 +56,10 @@ public class IdRecommend {
 			answer.append(ch);
 		}// for end
 		
+		// 글자갯수 15개로 맞추기
 		if(answer.length()>= 16) {
 			answer.setLength(15);
 		}
-		
-		
 		//빈문자열 처리 ->a 넣기
 		if(answer.length() == 0) {
 			answer.append('a');
