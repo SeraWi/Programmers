@@ -67,6 +67,7 @@ public class MenuRenewal {
 		}
 		for( String str : orders) {
 			char[] arr = str.toCharArray();
+			// 오름차순 정렬
 			Arrays.sort(arr);
 			
 			// 만들 수 있는 경우의 수 모두 만들기
