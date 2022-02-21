@@ -6,6 +6,18 @@ import java.util.List;
 
 //sublist : list일정부분만 자르기
 // sublist(fromIdx, toIdx) : fromIdx 포함하고 toIdx 앞까지(포함하지 않음)list 만듬
+
+/*
+Food 타입의 list를 만들고 , 시간이 짧은 순서대로 정렬 시킨다.
+for 문을 돌면서, 1초씩 도는 방식이 아니라 한번에 음식 갯수만큼을 제거하는 식으로 효율성을 높인다.
+가장 짧은 시간이 걸리는 음식  * 음식 갯수
+그 다음 짧은 시간이 걸리는 음식 * 남은 음식 갯수
+k 초 가 넘어가는 순간 , idx순서로 다시 list를 정렬한다.
+나머지 연산으로 몇번째 부터 먹게 되는지 return 한다.
+4초가 남았고 음식 3개라면  4%3= 1이다. 그렇다면 idx=2인 음식부터 먹으면 된다. 
+*/
+
+
 public class MukbangLive {
     public int solution(int[] food_times, long k) {
         List<Food> foods = new LinkedList<Food>();
@@ -36,7 +48,7 @@ public class MukbangLive {
         			return foods.get(i +(int) k).idx;
         		}
         	}
-        	++i;//index 증가 
+        	++i;//index 증가( food 한턴 돌면 idx 증가한다)
         	--n;// 남아있는 음식 줄이기
         	
         }
