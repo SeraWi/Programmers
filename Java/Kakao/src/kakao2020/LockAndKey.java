@@ -23,9 +23,7 @@ public class LockAndKey {
 	//				복사된 자물쇠	키		회전			키위치
 	static void match(int[][]arr, int[][]key, int rot, int r, int c) {
 		
-		
 		// arr에 key 를 복사해서 더한다.
-		
 		int n = key.length;
 		
 		for(int i= 0; i<n; ++i) {
@@ -48,7 +46,6 @@ public class LockAndKey {
 		}
 		
 	}
-	//										    자물쇠 크기
 	static boolean check(int[][] arr, int offset, int n) {
 		for ( int i = 0; i<n; ++i) {
 			for( int j= 0; j<n ; ++j) {
