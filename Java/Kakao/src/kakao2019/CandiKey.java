@@ -11,30 +11,30 @@ import java.util.List;
 public class CandiKey {
 	
 	
-//	Comparator<Integer> comp = new Comparator<Integer>() {
-//		
-//		int countBits(int n) {
-//			int ret = 0;
-//			while(n != 0) {
-//				if((n & 1) != 0) {
-//					++ret;
-//				}
-//				n = n>> 1;
-//			}
-//			return ret;
-//		}// countBits end
-//		
-//		public int compare(Integer a, Integer b) {
-//			int x = countBits(a), y = countBits(b);
-//			if(x> y) {
-//				return 1;
-//			}else if(x<y) {
-//				return -1;
-//			}else {
-//				return 0;
-//			}
-//		}// compare end
-//	}// comparator 끝
+	Comparator<Integer> comp = new Comparator<Integer>() {
+		
+		int countBits(int n) {
+			int ret = 0;
+			while(n != 0) {
+				if((n & 1) != 0) {
+					++ret;
+				}
+				n = n>> 1;
+			}
+			return ret;
+		}// countBits end
+		
+		public int compare(Integer a, Integer b) {
+			int x = countBits(a), y = countBits(b);
+			if(x> y) {
+				return 1;
+			}else if(x<y) {
+				return -1;
+			}else {
+				return 0;
+			}
+		}// compare end
+	};// comparator 끝
 
 	boolean check(String[][] relation, int rowsize, int colsize, int subset) {
 		for(int a = 0; a<rowsize - 1;++a) {
