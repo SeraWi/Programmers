@@ -8,9 +8,14 @@ String 객체까리 더하는 방법은 메모리할당과 해제를 발생, 비
 StringBuilder 는 변경 가능한 문자열을 만들어 준다.
 append() : 문자열 추가
 delete(index) : index 의 문자열 제거
+delete(index, index) : 범위지정 삭제
+indexOf(값 ): 값이 어느 인덱스에 들어있는지 확인
 deleteCharAt() : 특정 인덱스의 한문자만 삭제
 reverse() :문자열 거꾸로 뒤집어줌
 toString() :String 으로 반환
+insert(index, 값) :특정 인덱스에 값을 삽입
+setLength(길이 ): 현재 문자열보다 길게 조정하면 공백으로 채워짐.짧으면 나머지 문자 잘림
+
 */
 public class IdRecommend {
 	
