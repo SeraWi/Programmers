@@ -13,6 +13,7 @@ public class BitOperationEx2 {
 		int ret = 0;
 		
 		for( int i= 0; i< (1<<N) ; ++i) {
+			// bitcount : 1의 갯수 반환
 			if(Integer.bitCount(i)!=2) {
 				//원소의 갯수가 2개가 아닌경우
 				continue;
