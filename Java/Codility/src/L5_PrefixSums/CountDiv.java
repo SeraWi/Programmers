@@ -1,4 +1,4 @@
-package PrefixSums;
+package L5_PrefixSums;
 
 public class CountDiv {
 //given three integers A, B and K, 
