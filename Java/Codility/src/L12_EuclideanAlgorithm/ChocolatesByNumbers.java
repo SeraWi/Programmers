@@ -35,6 +35,7 @@ public class ChocolatesByNumbers {
 		return N/gcd(N, M, 1);
 	}
 	
+	//O(log(N + M))
 	public static int gcd(int a, int b, int res) {
 		if(a == b) {
 			return res * a;
