@@ -1,52 +1,52 @@
 package L14_BinarySearch;
 
 public class MinMaxDivision {
-	
+
 	//The large sum is the maximal sum of any block.
-	
+
+	//이분탐색을 하라는 문제
 	public static int solution(int K, int M, int[] A) {
 		// write your code in Java SE 8
 		// K block으로 array를 나눈다.
 		// A의 최대값은 M이하다
 		// K블럭으로 나누고 블럭안의 element합의 최대를 구한다.
 		// 그러한 조합 중 최솟값을 return 한다.
+		
 		int min = 0;
 		int max = 0;
-		for( int a : A) {
-			max +=a;
-			min = Math.max(min,  a);
+		for(int a : A) {
+			max +=a; // 최대값
+			min = Math.max(min, a);
 		}
 		
-		
-		int bestAnswer = max;
-		
+		int bestAnswer =max;
 		while(min <= max) {
-			int mid = (min + max) /2;
+			int mid = (min  + max)/2;
 			
 			int blocks = checkBlocks(A, mid);
 			if(blocks > K) {
 				min = mid +1;
 			}else {
-				max = mid-1;
+				max = mid  -1;
 				if(mid < bestAnswer) {
-					bestAnswer =mid;
+					bestAnswer = mid;
 				}
 			}
 		}
 		
-		
 		return bestAnswer;
 	}
 	
-	private static int checkBlocks(int[] A, int guess) {
+	private static int checkBlocks(int[]A, int guess) {
 		int blocks = 1;
 		int blockSum = 0;
 		
-		for( int a: A) {
-			blockSum += a;
+		
+		for( int a : A) {
+			blockSum +=a;
 			if(blockSum > guess) {
 				blockSum = a;
-				blocks ++;
+				blocks++;
 			}
 		}
 		return blocks;
