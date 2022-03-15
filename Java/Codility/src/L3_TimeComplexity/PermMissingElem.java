@@ -14,8 +14,6 @@ public class PermMissingElem {
 		if(A.length == 1) {
 			return 1;
 		}
-
-
 		for( int i = 0;i<A.length; i++) {
 			if(i+1 !=A[i]) {
 				return i+1;
