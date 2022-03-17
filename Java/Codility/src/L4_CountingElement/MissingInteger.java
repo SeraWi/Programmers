@@ -1,6 +1,7 @@
 package L4_CountingElement;
 
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class MissingInteger {
 	//that, given an array A of N integers, returns the smallest positive integer (greater than 0) 
@@ -23,6 +24,26 @@ public class MissingInteger {
 		return ans;
 	}
 	
+	
+	//O(N) or O(N * log(N))
+	public int solution2(int[] A) {
+		
+		HashSet<Integer> nums = new HashSet<Integer>();
+		
+		// 1부터길이보다 하나크게 까지 만들기
+		for( int i = 1; i<= A.length+1 ; i++) {
+			//중복 제거
+			nums.add(i);
+		}
+		
+		//하나씩 지워나가기
+		for( int a : A) {
+			nums.remove(new Integer(a));
+		}
+		//최초로 나오는거 출력
+		return nums.iterator().next();
+		
+	}
 	public static void main(String[] args) {
 		int [] A = {1, 3, 6, 4, 1, 2};
 		System.out.println(solution(A));
